@@ -1,0 +1,40 @@
+{{ define "articles" }}
+
+{{ template "header" }}
+
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1>Статьи</h1>
+                <table class="table  table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Anons</th>
+                            <th scope="col">Text</th>
+                            <th scope="col">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range . }}
+                        <tr>
+                            <td>{{ .Id }}</td>
+                            <td>{{ .Title }}</td>
+                            <td>{{ .Anons }}</td>
+                            <td>{{ .Full_text }}</td>
+                            <td><a href="/post/{{ .Id }}" class="btn btn-danger">Читать далее</a></td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    {{ template "footer" }}
+
+    {{ end }}

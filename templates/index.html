@@ -1,0 +1,37 @@
+{{ define "index" }}
+
+{{ template "header" }}
+
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Album example</h1>
+                <p>Пользователь: {{ .Name }}</p>
+                <p>Возраст: {{ .Age }}</p>
+                <p>Балансм: {{ .Money }}</p>
+                <p>Счастье: {{ .Happiness }}</p>
+                {{ if eq .Name "Bob" }}
+                <span>Увлечения</span>
+                {{ else if ne .Name "Bob"}}
+                <span>Не Боб!!</span>
+                {{ else  if lt .Age 22 }}
+                <span>1111</span>
+                {{ else  if gt .Age 22 }}
+                <span>222</span>
+                {{ end }}
+                <ul>
+                {{ range .Hobbies }}
+                <li>
+                <b>{{ . }}</b>
+                </li>
+                {{ end }}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+{{ template "footer" }}
+
+{{ end }}

@@ -1,0 +1,23 @@
+{{ define "create" }}
+
+{{ template "header" }}
+
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1>Форма добавления статьи</h1>
+                <form action="/save_article" method="post">
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Введите название статьи"><br>
+                    <textarea name="anons" id="anons" class="form-control" placeholder="Введите анонс" cols="30" rows="2"></textarea><br>
+                    <textarea name="full_text" id="full_text" class="form-control" placeholder="Введите полный текст" cols="5" rows="10"></textarea><br>
+                    <button class="btn btn-success">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    {{ template "footer" }}
+
+    {{ end }}
